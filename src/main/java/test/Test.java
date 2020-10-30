@@ -15,6 +15,7 @@
  */
 package test;
 
+import org.apache.ibatis.logging.log4j.Log4jImpl;
 import org.apache.ibatis.reflection.MetaObject;
 import org.apache.ibatis.reflection.SystemMetaObject;
 import org.apache.ibatis.reflection.TypeParameterResolver;
@@ -38,18 +39,6 @@ public class Test {
 
     public static void main(String[] args) throws NoSuchFieldException {
 
-        System.out.println(PropertyNamer.methodToProperty("getAbc"));
-        System.out.println(PropertyNamer.methodToProperty("get$AA"));
-        System.out.println(PropertyNamer.methodToProperty("isA"));
-
-        Field f = Test.class.getDeclaredField("map");
-
-        System.out.println(f.getGenericType().getClass());
-        ;
-
-        Type type = TypeParameterResolver.resolveFieldType(f,ParameterizedTypeImpl
-                .make(Test.class,new Type[]{Long.class},Test.class));
-        System.out.println(type.getClass());
 
     }
 }
